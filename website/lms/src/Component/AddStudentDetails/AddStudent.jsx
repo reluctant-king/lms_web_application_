@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import api from '../../Utils/api';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AllCourseDetail } from "../AllCourseContext/Context";
@@ -30,7 +31,7 @@ const AddStudent = ({ setShowForm, emailll, editMode, editStudent }) => {
     const getAllUsers = async () => {
         try {
             setLoading(true)
-            let res = await axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_user")
+            let res = await api.get(`/api/v1/get_all_user`)
             console.log(res)
             setUsers(res.data.users)
 
@@ -48,8 +49,8 @@ const AddStudent = ({ setShowForm, emailll, editMode, editStudent }) => {
 
         getAllUsers()
 
-        axios
-            .get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_batches")
+        api
+            .get(`/api/v1/get_all_batches`)
             .then((res) => setBatches(res.data.data || []))
             .catch((err) => console.error(err));
     }, []);
@@ -107,9 +108,9 @@ const AddStudent = ({ setShowForm, emailll, editMode, editStudent }) => {
             let res
 
             if(editMode){
-                 res = await axios.put(`https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_student${editStudent._id}`, payload)
+                 res = await api.put(`/api/v1/get_student${editStudent._id}`, payload)
             } else {
-                res = await axios.post("https://lms-web-application-backend-ymjf.onrender.com/api/v1/add_student", payload)
+                res = await api.post(`/api/v1/add_student`, payload)
             console.log(res)
             if (res.data.success) {
                 toast.success(res.data.messsage)

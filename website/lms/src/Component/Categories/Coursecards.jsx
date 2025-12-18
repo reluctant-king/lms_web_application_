@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import api from '../../Utils/api';
 import { FaHeart, FaBullseye, FaShieldAlt, FaPuzzlePiece, FaMicrophone } from "react-icons/fa";
 
 
@@ -24,8 +25,8 @@ const CourseCategories = () => {
     const getAllCategories = async () => {
       try {
         
-        const response = await fetch("https://lms-web-application-backend-ymjf.onrender.com/api/v1/view_All_course_categories?page=1&limit=1000");
-        const data = await response.json();
+        const res = await api.get(`/api/v1/view_All_course_categories?page=1&limit=1000`);
+        const data = res.data;
         
         if (data.data) {
           setCategories(data.data.slice(0, 7)); 

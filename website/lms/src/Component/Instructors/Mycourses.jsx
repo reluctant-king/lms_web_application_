@@ -116,10 +116,7 @@ const MyCourses = () => {
     }
 
     try {
-      const res = await axios.delete(
-        `https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_course/${courseId}`,
-        { withCredentials: true }
-      );
+      const res = await api.delete(`/api/v1/get_course/${courseId}`, { withCredentials: true });
 
       if (res.data.success) {
         setCourses(courses.filter(c => c._id !== courseId));

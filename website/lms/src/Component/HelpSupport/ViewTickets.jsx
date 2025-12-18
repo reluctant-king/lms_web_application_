@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
+import api from '../../Utils/api';
 import axios from "axios";
 import { ArrowLeft, Send, Paperclip, MoreVertical, CheckCheck } from "lucide-react";
 
-const API_BASE = "https://lms-web-application-backend-ymjf.onrender.com/api/v1";
+const API_BASE = api.defaults.baseURL;
 
 const TicketChatPage = () => {
   const { ticketId } = useParams();
@@ -15,9 +16,7 @@ const TicketChatPage = () => {
   const fetchTicket = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`${API_BASE}/userticket/${ticketId}`, {
-        withCredentials: true
-      });
+      const res = await api.get(`/userticket/${ticketId}`, { withCredentials: true });
       setTicket(res.data.data);
       console.log("Ticket loaded:", res.data.data);
     } catch (err) {
@@ -33,11 +32,7 @@ const TicketChatPage = () => {
   const handleSendMessage = async () => {
     if (newMessage.trim()) {
       try {
-        await axios.post(
-          `${API_BASE}/userticket/${ticketId}/message`,
-          { message: newMessage.trim() },
-          { withCredentials: true }
-        );
+        await api.post(`/userticket/${ticketId}/message`, { message: newMessage.trim() }, { withCredentials: true });
         setNewMessage('');
         fetchTicket();
       } catch (err) {

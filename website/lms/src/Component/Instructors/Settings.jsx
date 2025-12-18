@@ -81,11 +81,7 @@ const SettingsPage = () => {
     setSuccess('');
 
     try {
-      const response = await axios.put(
-        'https://lms-web-application-backend-ymjf.onrender.com/api/v1/user/update-profile',
-        profileData,
-        { withCredentials: true }
-      );
+      const response = await api.put(`/api/v1/user/update-profile`, profileData, { withCredentials: true });
 
       if (response.data.success) {
         setSuccess('Profile updated successfully!');
@@ -121,14 +117,7 @@ const SettingsPage = () => {
     }
 
     try {
-      const response = await axios.put(
-        'https://lms-web-application-backend-ymjf.onrender.com/api/v1/user/change-password',
-        {
-          currentPassword: passwordData.currentPassword,
-          newPassword: passwordData.newPassword,
-        },
-        { withCredentials: true }
-      );
+      const response = await api.put(`/api/v1/user/change-password`, { currentPassword: passwordData.currentPassword, newPassword: passwordData.newPassword }, { withCredentials: true });
 
       if (response.data.success) {
         setSuccess('Password changed successfully!');
@@ -150,11 +139,7 @@ const SettingsPage = () => {
     setSuccess('');
 
     try {
-      const response = await axios.put(
-        'https://lms-web-application-backend-ymjf.onrender.com/api/v1/user/update-notifications',
-        notifications,
-        { withCredentials: true }
-      );
+      const response = await api.put(`/api/v1/user/update-notifications`, notifications, { withCredentials: true });
 
       if (response.data.success) {
         setSuccess('Notification preferences updated!');
@@ -175,11 +160,7 @@ const SettingsPage = () => {
     setSuccess('');
 
     try {
-      const response = await axios.put(
-        'https://lms-web-application-backend-ymjf.onrender.com/api/v1/user/update-privacy',
-        privacy,
-        { withCredentials: true }
-      );
+      const response = await api.put(`/api/v1/user/update-privacy`, privacy, { withCredentials: true });
 
       if (response.data.success) {
         setSuccess('Privacy settings updated!');

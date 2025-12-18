@@ -1,3 +1,4 @@
+import api from '../../Utils/api';
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { FcGoogle } from "react-icons/fc"
@@ -8,7 +9,7 @@ const GoogleLogin = () => {
   const navigate = useNavigate()
 
   const handleGoogleLogin = () => {
-   window.open("https://lms-web-application-backend-ymjf.onrender.com/auth/google", "_self")
+   window.open(`${api.defaults.baseURL.replace(/\/$/, '')}/auth/google`, "_self")
    
   }
 

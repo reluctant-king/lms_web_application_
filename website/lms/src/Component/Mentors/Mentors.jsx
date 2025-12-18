@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import api from '../../Utils/api';
 import axios from 'axios';
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 
@@ -68,9 +69,7 @@ const Mentors = () => {
   useEffect(() => {
     const fetchInstructors = async () => {
       try {
-        const res = await axios.get('https://lms-web-application-backend-ymjf.onrender.com/api/v1/view_instructor', {
-          params: { page: 1, limit: 1000 },
-        });
+        const res = await api.get(`/api/v1/view_instructor`, { params: { page: 1, limit: 1000 } });
         setInstructors(res.data.data || []);
       } catch {
         setInstructors([]);

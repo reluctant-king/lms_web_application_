@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import api from '../../Utils/api';
 import axios from "axios";
 import { toast } from "react-toastify";
 import { X, Upload, Ticket, MessageSquare, Clock, AlertCircle } from "lucide-react";
@@ -27,13 +28,7 @@ const HelpTickets = () => {
   useEffect(() => {
     const fetchTickets = async () => {
       try {
-        const { data } = await axios.get(
-          "https://lms-web-application-backend-ymjf.onrender.com/api/v1/getusertickets",
-          {
-            headers: { Authorization: `Bearer ${token}` },
-            withCredentials: true,
-          }
-        );
+        const { data } = await api.get(`/api/v1/getusertickets`, { headers: { Authorization: `Bearer ${token}` }, withCredentials: true });
         if (data.success) setTickets(data.data);
       } catch (err) {
         console.error("Error fetching tickets:", err);
@@ -72,14 +67,7 @@ const HelpTickets = () => {
         attachment: attachmentUrl, // ✅ Cloudinary link
       };
 
-      const res = await axios.post(
-        "https://lms-web-application-backend-ymjf.onrender.com/api/v1/createticket",
-        payload,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-            withCredentials: true,
-          }
-      );
+      const res = await api.post(`/api/v1/createticket`, payload, { headers: { Authorization: `Bearer ${token}` }, withCredentials: true });
 
       if (res.data.success) {
         toast.success("Ticket created successfully!");
