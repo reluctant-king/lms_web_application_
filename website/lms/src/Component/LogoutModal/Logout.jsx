@@ -15,7 +15,7 @@ const Logout = ({ setLogout }) => {
     try {
       setLoading(true);
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/v1/logout`,
+        `${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/logout`,
         {},
         { withCredentials: true }
       );

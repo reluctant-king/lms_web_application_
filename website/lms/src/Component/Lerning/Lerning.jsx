@@ -85,8 +85,8 @@ const Lerning = () => {
   const getCourse = async () => {
     try {
       setLoading(true);
-      let res = await axios.get(`${import.meta.env.VITE_API_URL}/get_course/${id}`);
-      let quizSubmitRes = await axios.get(`${import.meta.env.VITE_API_URL}/get_all_userSubmited_answer`)
+      let res = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/get_course/${id}`);
+      let quizSubmitRes = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/get_all_userSubmited_answer`)
       setCourse(res.data.data);
       setSubmitesQuiz(quizSubmitRes.data.userSubmitedQquiz)
 
@@ -100,8 +100,8 @@ const Lerning = () => {
 
   const getLesson = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/get_lesson/${id}`)
-      const getAllQres = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/get_all_module_quizz`)
+      const res = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/get_lesson/${id}`)
+      const getAllQres = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/get_all_module_quizz`)
       console.log(res)
       console.log(getAllQres)
 

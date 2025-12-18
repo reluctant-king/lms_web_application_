@@ -21,7 +21,7 @@ const QuizList = () => {
   const getAllQuizess = async () => {
     setLoading(true)
     try {
-      let res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/get_all_quizz`)
+      let res = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/get_all_quizz`) 
       console.log(res);
       setQuizz(res.data.quizz)
     } catch (error) {

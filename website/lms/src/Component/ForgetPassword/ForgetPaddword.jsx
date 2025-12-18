@@ -45,7 +45,7 @@ const ForgetPaddword = () => {
     }
 
     try {
-      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/reset_password/${token}`, { password });
+      const res = await axios.post(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/reset_password/${token}`, { password });
 
       if (res.data.success) {
         toast.success(res.data.message);

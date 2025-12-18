@@ -9,7 +9,7 @@ const UserQuiz = () => {
   const [answers, setAnswers] = useState([]);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL}/view_quiz/${quizId}`)
+    axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/view_quiz/${quizId}`)
       .then(res => {
         const quizData = res.data.data;
         setQuiz(quizData);
@@ -30,14 +30,14 @@ const UserQuiz = () => {
   };
 
   const handleSubmit = () => {
-    axios.post(`${import.meta.env.VITE_API_URL}/api/v1/submit_quiz`, { quizId, answers })
+    axios.post(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/submit_quiz`, { quizId, answers })
       .then(res => alert(`Quiz submitted! Score: ${res.data.data.score}`))
     navigate("/quizzes")
       .catch(err => {
         console.error(err.response?.data || err);
         alert("Failed to submit quiz. Check console for details.");
       });
-  };
+  }; 
 
   if (!quiz) return <p>Loading...</p>;
 

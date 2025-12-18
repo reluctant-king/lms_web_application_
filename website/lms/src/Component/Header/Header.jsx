@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import Logout from '../LogoutModal/Logout';
 import { AllCourseDetail } from '../AllCourseContext/Context';
-import axios from 'axios';
+import api from '../../utils/api';
 
 const Header = () => {
   const { user } = useContext(AllCourseDetail);
@@ -40,15 +40,18 @@ const Header = () => {
 
 
    const fetchNotifications = async () => {
+      // don't attempt to call API without a user id
+      if (!user?._id) return;
+
       try {
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/get_notification/${user?._id}`);
-        console.log(res.data.count)
+        const res = await api.get(`/api/v1/get_notification/${user._id}`);
+        console.log(res.data.count);
 
         if (res.data.success) {
           setNotifications(res.data.count);
         }
       } catch (err) {
-        console.error(err);
+        console.error('Failed to fetch notifications', err);
       }
     };
   useEffect(() => {

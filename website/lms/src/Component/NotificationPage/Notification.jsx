@@ -21,7 +21,7 @@ const Notification = () => {
   const getAllNoticication = async () => {
     try {
       setLoading(true)
-      let res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/all_notification`)
+      let res = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/all_notification`)
       console.log(res)
 
       const assignmentNot = res.data.notification.filter(
@@ -120,7 +120,7 @@ const Notification = () => {
   const confirmDelete = async (id) => {
     setNottId(id)
     try {
-      let res = await axios.delete(`${import.meta.env.VITE_API_URL}/api/v1/delete_notification/${id}`)
+      let res = await axios.delete(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/delete_notification/${id}`)
       if (res.data.success) {
         onTimeDelete()
         toast.success("Notification deleted")

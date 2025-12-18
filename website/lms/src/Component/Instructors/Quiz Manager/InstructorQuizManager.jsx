@@ -24,7 +24,7 @@ const InstructorQuizManager = () => {
   const fetchQuizzes = async () => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/all`,
+        `${import.meta.env.VITE_API_URL || window?.location?.origin}/all`,
         { withCredentials: true }
       );
       setQuizzes(res.data.data || []);
@@ -40,7 +40,7 @@ const InstructorQuizManager = () => {
     if (!window.confirm(`Delete "${quizName}"?`)) return;
 
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/delete_quiz/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL || window?.location?.origin}/delete_quiz/${id}`); 
       setQuizzes((prev) => prev.filter((q) => q._id !== id));
       toast.success("Quiz deleted successfully");
     } catch (err) {

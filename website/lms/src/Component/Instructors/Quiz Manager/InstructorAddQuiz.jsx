@@ -49,7 +49,7 @@ const InstructorAddQuiz = () => {
       };
 
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/create_quiz`,
+        `${import.meta.env.VITE_API_URL || window?.location?.origin}/create_quiz`, 
         payload,
         { withCredentials: true }
       );

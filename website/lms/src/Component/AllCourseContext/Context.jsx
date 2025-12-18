@@ -18,7 +18,7 @@ export const Context = (props) => {
         const token = document.cookie.includes("token=")
         if (!token) return;
         const getMe = async () => {
-            let res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/me`, {
+            let res = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/me`, { 
                 withCredentials: true
             })
             console.log(res);

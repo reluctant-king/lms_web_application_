@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import api from '../../utils/api';
 
 const UpcomingEvents = () => {
   const [events, setEvents] = useState([]);
@@ -7,17 +8,10 @@ const UpcomingEvents = () => {
   useEffect(() => {
     const fetchRandomCourses = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/v1/get_all_courses?page=1&limit=100`);
+        const resp = await api.get(`/api/v1/get_all_courses?page=1&limit=100`);
+        const data = resp.data;
 
-        // Check if the response is actually JSON
-        const contentType = response.headers.get("content-type");
-        if (!response.ok || !contentType?.includes("application/json")) {
-          throw new Error(`Invalid response: ${response.status} ${response.statusText}`);
-        }
-
-        const data = await response.json();
-
-        if (data.data && data.data.length > 0) {
+        if (data?.data && data.data.length > 0) {
           const shuffled = [...data.data].sort(() => 0.5 - Math.random());
           const randomCourses = shuffled.slice(0, 4);
           const eventsData = randomCourses.map(course => ({
