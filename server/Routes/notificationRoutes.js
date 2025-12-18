@@ -30,3 +30,4 @@ router.patch("/notifications/:id/read", authToken, markNotificationAsRead);
 // router.delete("/notifications/:id", authToken, deleteUserNotification);
 
 module.exports = router;
+

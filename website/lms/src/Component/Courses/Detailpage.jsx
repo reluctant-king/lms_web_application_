@@ -520,3 +520,4 @@ export default Detailpage;
 
 
 
+

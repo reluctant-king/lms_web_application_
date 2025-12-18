@@ -38,7 +38,7 @@ const Users = () => {
     const getAllUsers = async () => {
         try {
             const res = await axios.get(
-                `https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_all_user?firstname=${search}`, {
+                `https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_user?firstname=${search}`, {
 
                 withCredentials: true
             }
@@ -83,14 +83,14 @@ const Users = () => {
                     setDeleteClick={setDeleteClick}
                     deleteCont={deleteCont}
                     id={id}
-                    api_end_point="https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_user"
+                    api_end_point="https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_user"
                     onTimeDelete={onTimeDelete}
                 />
             )}
             {showEditPopop && <Edit
                 field={usersField}
                 setShowEditPopup={setShowEditPopup}
-                api_end_point="https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_user"
+                api_end_point="https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_user"
                 id={id}
                 updateInput={userUpdateInput}
                 reRender={getAllUsers}
@@ -224,3 +224,4 @@ const Users = () => {
 };
 
 export default Users;
+

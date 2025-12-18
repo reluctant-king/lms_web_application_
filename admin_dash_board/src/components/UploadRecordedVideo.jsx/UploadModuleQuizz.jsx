@@ -32,7 +32,7 @@ const UploadModuleQuizz = () => {
     const getAllCourseDetails = async () => {
         try {
             setLoading(true);
-            let res = await axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_all_courses");
+            let res = await axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_courses");
             setCourse(res.data.courses);
         } catch (error) {
             console.error("Error fetching course details:", error);
@@ -57,7 +57,7 @@ const UploadModuleQuizz = () => {
 
     const fetchQuiz = async () => {
         try {
-            let res = await axios.get(`https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_module_quiz/${id}`)
+            let res = await axios.get(`https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_module_quiz/${id}`)
             console.log(res)
             if (res.data.success) {
                 const quizdata = res.data.moduleQuiz
@@ -158,7 +158,7 @@ const UploadModuleQuizz = () => {
                     courseId: courseid,
                     moduleQuizz: quiz.moduleQuizz
                 }
-                let editRes = await axios.put(`https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_module_quiz/${id}`, payload)
+                let editRes = await axios.put(`https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_module_quiz/${id}`, payload)
                 console.log(editRes);
 
 
@@ -180,7 +180,7 @@ const UploadModuleQuizz = () => {
 
 
             } else {
-                const res = await axios.post("https://lms-web-application-backend-e6yj.onrender.com/api/v1/create_module_quizz", {
+                const res = await axios.post("https://lms-web-application-backend-ymjf.onrender.com/api/v1/create_module_quizz", {
                     course: quiz.course,
                     courseId: courseid,
                     moduleQuizz: quiz.moduleQuizz
@@ -376,3 +376,4 @@ const UploadModuleQuizz = () => {
 };
 
 export default UploadModuleQuizz;
+

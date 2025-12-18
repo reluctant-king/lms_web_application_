@@ -65,3 +65,4 @@ exports.viewAllCourseCategories = async (req, res) => {
     });
   }
 };
+

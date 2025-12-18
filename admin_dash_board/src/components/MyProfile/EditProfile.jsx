@@ -46,7 +46,7 @@ const EditProfile = ({ setShowEdit, id }) => {
 
     const getInstitute = async () => {
         try {
-            let res = await axios.get(`https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_institute/${id}`)
+            let res = await axios.get(`https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_institute/${id}`)
             console.log(res)
             setInput(res.data.institute)
 

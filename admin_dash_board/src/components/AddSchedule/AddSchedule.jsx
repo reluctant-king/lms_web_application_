@@ -29,8 +29,8 @@ const ScheduleBatch = () => {
     const fetchData = async () => {
       try {
         const [coursesRes, instructorsRes] = await Promise.all([
-          axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_all_courses"),
-          axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/view_instructor"),
+          axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_courses"),
+          axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/view_instructor"),
         ]);
 
         console.log(coursesRes, instructorsRes);
@@ -79,7 +79,7 @@ const ScheduleBatch = () => {
         description: form.description,
       };
 
-      await axios.post("https://lms-web-application-backend-e6yj.onrender.com/api/v1/create_batch", payload);
+      await axios.post("https://lms-web-application-backend-ymjf.onrender.com/api/v1/create_batch", payload);
 
       toast.success("Batch created successfully!", {
         position: "top-right",

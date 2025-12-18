@@ -372,13 +372,13 @@ const Lerning = () => {
 const handleCertificate = async (email, userName, course, userId) => {
   try {
     const [certificateRes, courseCompleteRes] = await Promise.all([
-      axios.post("https://lms-web-application-backend-e6yj.onrender.com/api/v1/course_completation_certificate", {
+      axios.post("https://lms-web-application-backend-ymjf.onrender.com/api/v1/course_completation_certificate", {
         email: email,
         studentName: userName,
         courseName: course
       }),
 
-      axios.post("https://lms-web-application-backend-e6yj.onrender.com/api/v1/course_completers", {
+      axios.post("https://lms-web-application-backend-ymjf.onrender.com/api/v1/course_completers", {
         username: userName,
         userId: userId,
         userEmail: email,

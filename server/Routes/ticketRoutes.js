@@ -20,3 +20,4 @@ router.get("/solved", instiAuthToken, ticketCtrl.getSolvedTickets);
 router.patch("/ticket/:id/solved", instiAuthToken, ticketCtrl.markAsSolved);
 
 module.exports = router;
+

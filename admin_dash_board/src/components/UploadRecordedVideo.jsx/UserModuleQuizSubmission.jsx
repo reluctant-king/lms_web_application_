@@ -21,7 +21,7 @@ const UserModuleQuizSubmission = () => {
   const getAllQuizSubmiters = async () => {
     try {
       setLoading(true)
-      let res = await axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_all_userSubmited_answer")
+      let res = await axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_userSubmited_answer")
       console.log(res)
       setResults(res.data.userSubmitedQquiz)
 
@@ -169,3 +169,4 @@ const UserModuleQuizSubmission = () => {
 };
 
 export default UserModuleQuizSubmission;
+

@@ -72,3 +72,4 @@ const UserQuiz = () => {
 };
 
 export default UserQuiz;
+

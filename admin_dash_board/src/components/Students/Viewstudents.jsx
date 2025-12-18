@@ -40,7 +40,7 @@ const ViewStudents = () => {
   const getStudents = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/view_students");
+      const res = await axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/view_students");
       setStudents(res.data.students || []);
       console.log(res)
 
@@ -192,3 +192,4 @@ const ViewStudents = () => {
 };
 
 export default ViewStudents;
+

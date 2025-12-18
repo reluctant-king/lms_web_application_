@@ -20,3 +20,4 @@ router.post("/assign_student_batch", assignStudentToBatch);
 router.get("/students_by_batch/:batchId", getStudentsByBatch);
 
 module.exports = router;
+

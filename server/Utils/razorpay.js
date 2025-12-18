@@ -6,3 +6,4 @@ const instance = new Razorpay({
 });
 
 module.exports = instance;
+

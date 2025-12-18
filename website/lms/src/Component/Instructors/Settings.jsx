@@ -82,7 +82,7 @@ const SettingsPage = () => {
 
     try {
       const response = await axios.put(
-        'https://lms-web-application-backend-e6yj.onrender.com/api/v1/user/update-profile',
+        'https://lms-web-application-backend-ymjf.onrender.com/api/v1/user/update-profile',
         profileData,
         { withCredentials: true }
       );
@@ -122,7 +122,7 @@ const SettingsPage = () => {
 
     try {
       const response = await axios.put(
-        'https://lms-web-application-backend-e6yj.onrender.com/api/v1/user/change-password',
+        'https://lms-web-application-backend-ymjf.onrender.com/api/v1/user/change-password',
         {
           currentPassword: passwordData.currentPassword,
           newPassword: passwordData.newPassword,
@@ -151,7 +151,7 @@ const SettingsPage = () => {
 
     try {
       const response = await axios.put(
-        'https://lms-web-application-backend-e6yj.onrender.com/api/v1/user/update-notifications',
+        'https://lms-web-application-backend-ymjf.onrender.com/api/v1/user/update-notifications',
         notifications,
         { withCredentials: true }
       );
@@ -176,7 +176,7 @@ const SettingsPage = () => {
 
     try {
       const response = await axios.put(
-        'https://lms-web-application-backend-e6yj.onrender.com/api/v1/user/update-privacy',
+        'https://lms-web-application-backend-ymjf.onrender.com/api/v1/user/update-privacy',
         privacy,
         { withCredentials: true }
       );

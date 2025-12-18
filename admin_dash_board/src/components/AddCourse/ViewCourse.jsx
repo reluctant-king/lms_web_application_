@@ -68,7 +68,7 @@ const ViewCourses = () => {
   const getCourses = async () => {
     try {
       setLoading(true)
-      const res = await axios.get(`https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_all_courses?title=${search}&category=${search}`, {
+      const res = await axios.get(`https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_courses?title=${search}&category=${search}`, {
         withCredentials: true
       });
       console.log(res)
@@ -204,7 +204,7 @@ const ViewCourses = () => {
           setDeleteClick={setDeleteClick}
           deleteCont={deleteCont}
           id={id}
-          api_end_point="https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_course"
+          api_end_point="https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_course"
           onTimeDelete={onTimeDelete}
         />
       )}
@@ -347,3 +347,4 @@ const ViewCourses = () => {
 };
 
 export default ViewCourses;
+

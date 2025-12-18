@@ -101,3 +101,4 @@ const CurriculumForm = ({ data, updateData }) => {
 };
 
 export default CurriculumForm;
+

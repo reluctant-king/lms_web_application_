@@ -124,3 +124,4 @@ const sendPaymentConfirmationEmail = async (to, order) => {
 };
 
 module.exports = sendPaymentConfirmationEmail;
+

@@ -19,8 +19,8 @@ const FeeCollection = () => {
     const getAllFeecollection = async () => {
         try {
             setLoading(true)
-            let resOne = await axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_all_payment_details")
-            // let resTwo = await axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_all_student_fee")
+            let resOne = await axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_payment_details")
+            // let resTwo = await axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_student_fee")
             console.log("resOne", resOne)
             setCollections(resOne.data.paymentDetails || [])
 
@@ -97,7 +97,7 @@ const FeeCollection = () => {
                 onTimeDelete={onTimeDelete}
                 id={id}
                 deleteCont={deleteCont}
-                api_end_point="https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_student_fee_structore"
+                api_end_point="https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_student_fee_structore"
             />}
             <div className="max-w-7xl mx-auto">
                 {/* Header */}

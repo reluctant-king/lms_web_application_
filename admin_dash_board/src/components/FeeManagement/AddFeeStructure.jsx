@@ -32,8 +32,8 @@ const AddFeeStructure = ({ setShowForm }) => {
 
 
     const getAllCourse = async () => {
-        const courseres = await axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_all_courses")
-        const batchRes = await axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/view_all_batches")
+        const courseres = await axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_courses")
+        const batchRes = await axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/view_all_batches")
         setCourse(courseres.data.data)
         setBatch(batchRes.data.data)
         console.log(batchRes);
@@ -63,7 +63,7 @@ const AddFeeStructure = ({ setShowForm }) => {
             }
         }
         try {
-            let res = await axios.post("https://lms-web-application-backend-e6yj.onrender.com/api/v1/create_fee_structore", payload)
+            let res = await axios.post("https://lms-web-application-backend-ymjf.onrender.com/api/v1/create_fee_structore", payload)
             console.log(res);
             if (res.data.success) {
                 toast.success(res.data.message)

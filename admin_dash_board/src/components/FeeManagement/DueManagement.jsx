@@ -19,7 +19,7 @@ const DueManagement = () => {
     const getAllData = async () => {
         try {
             setLoading(true)
-            let resOne = await axios.get(`https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_all_payment_details?studentName=${searchTerm}&status=${status}`)
+            let resOne = await axios.get(`https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_payment_details?studentName=${searchTerm}&status=${status}`)
             setFeeDetail(resOne.data.paymentDetails)
             console.log("resOne", resOne);
 

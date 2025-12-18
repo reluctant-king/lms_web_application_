@@ -60,3 +60,4 @@ export const chartColors = {
     dark: getCssVariable('--color-gray-600'),
   },
 };
+

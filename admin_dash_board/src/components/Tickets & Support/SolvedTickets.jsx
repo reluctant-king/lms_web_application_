@@ -4,7 +4,7 @@ import { FaSearch, FaEye, FaTrash, FaFilePdf, FaPrint, FaPlus, FaCheckCircle } f
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 
-const API_BASE = "https://lms-web-application-backend-e6yj.onrender.com/api/v1";
+const API_BASE = "https://lms-web-application-backend-ymjf.onrender.com/api/v1";
 const itemsPerPage = 5;
 
 const displayName = (u) => {

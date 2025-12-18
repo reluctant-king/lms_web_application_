@@ -111,3 +111,4 @@ studentFeeSchema.pre("save", async function (next) {
 });
 const studentFeeModal = mongoose.model("student_fee", studentFeeSchema);
 module.exports = studentFeeModal;
+

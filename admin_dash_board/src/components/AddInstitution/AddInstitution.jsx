@@ -56,7 +56,7 @@ const AddInstitution = () => {
                 websiteUrl: inputs.websiteUrl,
                 image: img_url
             }
-            const res = await axios.post("https://lms-web-application-backend-e6yj.onrender.com/api/v1/add_institition", payload)
+            const res = await axios.post("https://lms-web-application-backend-ymjf.onrender.com/api/v1/add_institition", payload)
             console.log(res);
             if (res.data.success) {
                 setSubmitted(true)

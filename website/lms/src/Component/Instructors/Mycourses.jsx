@@ -117,7 +117,7 @@ const MyCourses = () => {
 
     try {
       const res = await axios.delete(
-        `https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_course/${courseId}`,
+        `https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_course/${courseId}`,
         { withCredentials: true }
       );
 

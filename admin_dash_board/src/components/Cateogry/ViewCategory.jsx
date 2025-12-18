@@ -26,7 +26,7 @@ const ViewCategory = () => {
   ]
   const getCategories = async () => {
     try {
-      const res = await axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/view_All_categories");
+      const res = await axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/view_All_categories");
       setCategories(res.data.allCoursecategory || []);
 
     } catch (error) {
@@ -241,3 +241,4 @@ const ViewCategory = () => {
 };
 
 export default ViewCategory;
+

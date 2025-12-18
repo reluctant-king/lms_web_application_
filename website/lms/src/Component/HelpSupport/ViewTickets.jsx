@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { ArrowLeft, Send, Paperclip, MoreVertical, CheckCheck } from "lucide-react";
 
-const API_BASE = "https://lms-web-application-backend-e6yj.onrender.com/api/v1";
+const API_BASE = "https://lms-web-application-backend-ymjf.onrender.com/api/v1";
 
 const TicketChatPage = () => {
   const { ticketId } = useParams();
@@ -262,3 +262,4 @@ const TicketChatPage = () => {
 };
 
 export default TicketChatPage;
+

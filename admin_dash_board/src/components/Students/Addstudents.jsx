@@ -22,7 +22,7 @@ const AddStudents = () => {
 
   useEffect(() => {
     axios
-      .get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/view_all_batches")
+      .get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/view_all_batches")
       .then((res) => setBatches(res.data.data || []))
       .catch((err) => console.error(err));
   }, []);
@@ -48,7 +48,7 @@ const AddStudents = () => {
         img_url = res.data.secure_url;
       }
 
-      await axios.post("https://lms-web-application-backend-e6yj.onrender.com/api/v1/add_student", {
+      await axios.post("https://lms-web-application-backend-ymjf.onrender.com/api/v1/add_student", {
         ...inputs,
         profileImage: img_url,
       });
@@ -190,3 +190,4 @@ const AddStudents = () => {
 };
 
 export default AddStudents;
+

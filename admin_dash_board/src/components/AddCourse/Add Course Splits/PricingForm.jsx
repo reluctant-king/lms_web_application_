@@ -74,3 +74,4 @@ const PricingForm = ({ data, updateData }) => {
 };
 
 export default PricingForm;
+

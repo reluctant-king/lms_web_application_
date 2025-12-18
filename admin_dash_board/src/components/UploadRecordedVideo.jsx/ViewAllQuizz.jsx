@@ -26,7 +26,7 @@ const ViewAllQuizz = () => {
     // Fetch quizzes
     const getAllQuizzes = async () => {
         try {
-            const res = await axios.get('https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_all_module_quizz');
+            const res = await axios.get('https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_module_quizz');
             if (res.data.success) {
                 setQuizzes(res.data.quizes || []);
             }

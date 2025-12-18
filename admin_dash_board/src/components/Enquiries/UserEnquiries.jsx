@@ -17,7 +17,7 @@ const UserEnquiries = () => {
 
   const getAllEnquiries = async (page = 1) => {
     try {
-      const res = await axios.get('https://lms-web-application-backend-e6yj.onrender.com/api/v1/getAll_enquiry', {
+      const res = await axios.get('https://lms-web-application-backend-ymjf.onrender.com/api/v1/getAll_enquiry', {
         params: { page, limit: itemsPerPage, name: search },
       });
       setEnquiry(res.data.data || []);
@@ -203,3 +203,4 @@ const UserEnquiries = () => {
 }
 
 export default UserEnquiries;
+

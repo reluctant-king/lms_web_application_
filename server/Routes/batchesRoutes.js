@@ -7,3 +7,4 @@ router.get("/view_all_batches", viewAllBatches);
 router.get("/get_all_batches", getAllBatches);
 
 module.exports = router;
+

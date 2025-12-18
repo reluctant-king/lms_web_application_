@@ -68,7 +68,7 @@ const CreateProfile = () => {
                 facilities: inputes.facilities
             }
 
-            let res = await axios.post("https://lms-web-application-backend-e6yj.onrender.com/add_institution_profile", payload)
+            let res = await axios.post("https://lms-web-application-backend-ymjf.onrender.com/add_institution_profile", payload)
             console.log(res);
             if (res.data.success) {
                 toast.success(res.data.message)

@@ -40,3 +40,4 @@ const sendPasswordResetEmail = async (to, resetUrl, firstname) => {
 };
 
 module.exports = sendPasswordResetEmail;
+

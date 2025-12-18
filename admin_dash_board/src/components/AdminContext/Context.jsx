@@ -24,7 +24,7 @@ export const Context = (props) => {
 
 
     const getAllSchedule = async () => {
-        let res = await axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_all_schedule")
+        let res = await axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_schedule")
         setSchedules(res.data.schedules)
 
     }
@@ -33,7 +33,7 @@ export const Context = (props) => {
         const token = document.cookie.includes("token=")
         if (!token) return;
         const geAdmin = async () => {
-            let res = await axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/getInstitutionAdmin", {
+            let res = await axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/getInstitutionAdmin", {
                 withCredentials: true
             })
             console.log(res);

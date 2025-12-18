@@ -25,3 +25,4 @@ router.get("/get_all_user_quiz_answer/:quizId", getSubmissionsByQuizId);
 router.delete("/delete_quiz/:id", deleteQuiz);
 
 module.exports = router;
+

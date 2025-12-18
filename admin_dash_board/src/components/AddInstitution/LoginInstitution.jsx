@@ -23,7 +23,7 @@ const LoginInstitution = () => {
         e.preventDefault()
 
         try {
-            let res = await axios.post("https://lms-web-application-backend-e6yj.onrender.com/api/v1/login_institute", {
+            let res = await axios.post("https://lms-web-application-backend-ymjf.onrender.com/api/v1/login_institute", {
                 email: inputs.email,
                 adminPassword: inputs.password
             }, {

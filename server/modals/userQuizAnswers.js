@@ -15,3 +15,4 @@ const userQuizSchema = new mongoose.Schema({
 
 const UserQuiz = mongoose.model("UserQuiz", userQuizSchema);
 module.exports = UserQuiz;
+

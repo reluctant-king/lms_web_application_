@@ -23,3 +23,4 @@ router.get("/stats/:batchId", getAttendanceStats);
 
 
 module.exports = router;
+

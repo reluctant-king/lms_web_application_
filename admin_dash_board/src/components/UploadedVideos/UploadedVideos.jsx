@@ -54,7 +54,7 @@ const UploadedVideos = () => {
 
   const getAllVideos = async (page = 1) => {
     try {
-      const res = await axios.get('https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_all_records');
+      const res = await axios.get('https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_records');
       setVideos(res.data.totalItems || []);
     } catch (error) {
       console.error('Error fetching videos:', error);
@@ -79,7 +79,7 @@ const UploadedVideos = () => {
       {showEditPopop && <Edit
         field={videoFields}
         setShowEditPopup={setShowEditPopup}
-        api_end_point="https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_recoeded_video"
+        api_end_point="https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_recoeded_video"
         id={id}
         updateInput={updateInput}
         reRender={getAllVideos}
@@ -204,3 +204,4 @@ const UploadedVideos = () => {
 };
 
 export default UploadedVideos;
+

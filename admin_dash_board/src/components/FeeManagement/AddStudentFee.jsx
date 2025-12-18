@@ -28,11 +28,11 @@ const AddStudentFee = ({ setShowForm }) => {
     const getAllData = async () => {
         setLoading(true)
         try {
-            let getallStudent = await axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/view_students")
-            let getallCourse = await axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_all_courses", {
+            let getallStudent = await axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/view_students")
+            let getallCourse = await axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_courses", {
                 withCredentials: true
             })
-            let getAllUsers = await axios.get("https://lms-web-application-backend-e6yj.onrender.com/api/v1/get_all_user")
+            let getAllUsers = await axios.get("https://lms-web-application-backend-ymjf.onrender.com/api/v1/get_all_user")
 
             console.log(getallStudent);
             setStudents(getallStudent.data.students)
@@ -123,8 +123,8 @@ const AddStudentFee = ({ setShowForm }) => {
 
 
             const [feeres, paymentRes] = await Promise.all([
-                axios.post("https://lms-web-application-backend-e6yj.onrender.com/api/v1/add_student_fee_structore", payload),
-                axios.post("https://lms-web-application-backend-e6yj.onrender.com/api/v1/save_db", payload)
+                axios.post("https://lms-web-application-backend-ymjf.onrender.com/api/v1/add_student_fee_structore", payload),
+                axios.post("https://lms-web-application-backend-ymjf.onrender.com/api/v1/save_db", payload)
             ])
             console.log(feeres, paymentRes)
             if (feeres.data.success && paymentRes.data.success) {
