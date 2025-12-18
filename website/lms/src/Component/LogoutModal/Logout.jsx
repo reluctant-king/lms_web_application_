@@ -4,7 +4,7 @@ import { FiLogOut } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { AllCourseDetail } from '../AllCourseContext/Context';
-import axios from 'axios';
+import api from '../../Utils/api';
 
 const Logout = ({ setLogout }) => {
   const navigate = useNavigate();
@@ -14,11 +14,7 @@ const Logout = ({ setLogout }) => {
   const handleLogout = async () => {
     try {
       setLoading(true);
-      const res = await axios.post(
-        `${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/logout`,
-        {},
-        { withCredentials: true }
-      );
+      const res = await api.post(`/api/v1/logout`, {}, { withCredentials: true });
 
       if (res.data.success) {
         setUser(null);

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useContext } from "react";
+import api from '../../Utils/api';
+import { useContext } from "react"; 
 import { AllCourseDetail } from "../AllCourseContext/Context";
 import { toast, ToastContainer } from 'react-toastify'
 
@@ -28,7 +29,7 @@ const CheckoutPage = () => {
 
     try {
       setLoading(true)
-      let studentDetail = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/view_students`)
+      let studentDetail = await api.get(`/api/v1/view_students`)
       console.log(studentDetail);
       setStudentDetails(studentDetail.data.students)
     } catch (error) {
@@ -86,11 +87,11 @@ const CheckoutPage = () => {
 
 
     if (courseDetail.isFree === false) {
-      const { data: keyData } = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/get_key`)
+      const { data: keyData } = await api.get(`/api/v1/get_key`)
       const { key } = keyData
       console.log("key:", key);
 
-      const orderRes = await axios.post(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/create_payment`, {
+      const orderRes = await api.post(`/api/v1/create_payment`, {
         amount: courseDetail.price,
 
       })
@@ -144,7 +145,7 @@ const CheckoutPage = () => {
             },
           }
           try {
-            const res = await axios.post(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/save_db`, paymentInfo)
+            const res = await api.post(`/api/v1/save_db`, paymentInfo)
             console.log(res)
             window.location.href = `/payment_success?reference=${response.razorpay_payment_id}`;
             console.log(res);
@@ -190,7 +191,7 @@ const CheckoutPage = () => {
         },
       }
       try {
-        const res = await axios.post(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/save_db`, paymentInfo)
+        const res = await api.post(`/api/v1/save_db`, paymentInfo)
         console.log(res)
         window.location.href = `/payment_success?reference=${paymentInfo.razorpay_payment_id}`;
         console.log(res);

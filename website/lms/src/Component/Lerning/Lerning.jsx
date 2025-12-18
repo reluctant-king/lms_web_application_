@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import axios from "axios";
+import api from '../../Utils/api';
 import {
   FiArrowLeft,
   FiChevronLeft,
@@ -85,8 +86,8 @@ const Lerning = () => {
   const getCourse = async () => {
     try {
       setLoading(true);
-      let res = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/get_course/${id}`);
-      let quizSubmitRes = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/get_all_userSubmited_answer`)
+      let res = await api.get(`/get_course/${id}`);
+      let quizSubmitRes = await api.get(`/get_all_userSubmited_answer`)
       setCourse(res.data.data);
       setSubmitesQuiz(quizSubmitRes.data.userSubmitedQquiz)
 
@@ -100,8 +101,8 @@ const Lerning = () => {
 
   const getLesson = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/get_lesson/${id}`)
-      const getAllQres = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/get_all_module_quizz`)
+      const res = await api.get(`/api/v1/get_lesson/${id}`)
+      const getAllQres = await api.get(`/api/v1/get_all_module_quizz`)
       console.log(res)
       console.log(getAllQres)
 

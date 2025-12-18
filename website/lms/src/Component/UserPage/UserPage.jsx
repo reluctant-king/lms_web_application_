@@ -3,7 +3,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import { FaPen, FaUserCircle, FaCamera, FaEnvelope, FaCalendarAlt, FaAward} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { AllCourseDetail } from '../AllCourseContext/Context'
-import AddStudent from '../AddStudentDetails/AddStudent'
+import api from '../../Utils/api';
+import AddStudent from '../AddStudentDetails/AddStudent' 
 import { 
   FaBook, FaCertificate, FaTrophy, FaClock, FaFire, 
   FaChartLine, FaBookmark, FaPlay, FaDownload, FaShare,
@@ -35,11 +36,11 @@ const [editStudent, setEditStudent] = useState(null);
     const studentEnrolledCourse = async () => {
         try {
             setLoading(true)
-            let res = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/get_all_payment_details`)
-            let allCourse = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/get_all_courses`)
-            let allCourseComplete = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/get_all_completers`) 
-            let allAssignment = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/get_all_assignments`)
-            let allStudent = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/view_students`) 
+            let res = await api.get(`/api/v1/get_all_payment_details`)
+            let allCourse = await api.get(`/api/v1/get_all_courses`)
+            let allCourseComplete = await api.get(`/api/v1/get_all_completers`)  
+            let allAssignment = await api.get(`/api/v1/get_all_assignments`)
+            let allStudent = await api.get(`/api/v1/view_students`) 
             console.log(allStudent)
             console.log(res)
             console.log(allCourse)

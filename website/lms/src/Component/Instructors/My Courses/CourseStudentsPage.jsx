@@ -23,7 +23,7 @@ const CourseStudentsPage = () => {
       setLoading(true);
       try {
         const res = await axios.get(
-          `${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/course_students/${courseId}`
+          `/api/v1/course_students/${courseId}`
         );
 
         const mapped = res.data.students.map((s) => ({

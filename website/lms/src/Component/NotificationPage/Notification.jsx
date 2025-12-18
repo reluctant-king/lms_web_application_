@@ -4,7 +4,8 @@ import { MdClose, MdDownloadDone, MdAssignment, MdAnnouncement, MdGrade, MdInfo 
 import { FaTrash } from 'react-icons/fa';
 import { FaExclamationCircle } from 'react-icons/fa';
 import axios from 'axios'
-import { toast, ToastContainer } from 'react-toastify';
+import api from '../../Utils/api';
+import { toast, ToastContainer } from 'react-toastify'; 
 import { useContext } from 'react';
 import { AllCourseDetail } from '../AllCourseContext/Context';
 
@@ -21,7 +22,7 @@ const Notification = () => {
   const getAllNoticication = async () => {
     try {
       setLoading(true)
-      let res = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/all_notification`)
+      let res = await api.get(`/api/v1/all_notification`)
       console.log(res)
 
       const assignmentNot = res.data.notification.filter(
@@ -120,7 +121,7 @@ const Notification = () => {
   const confirmDelete = async (id) => {
     setNottId(id)
     try {
-      let res = await axios.delete(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/delete_notification/${id}`)
+      let res = await api.delete(`/api/v1/delete_notification/${id}`)
       if (res.data.success) {
         onTimeDelete()
         toast.success("Notification deleted")

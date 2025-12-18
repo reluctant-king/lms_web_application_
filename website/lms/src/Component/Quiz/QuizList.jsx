@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from '../../Utils/api';
 import { toast, ToastContainer } from 'react-toastify'
 import { useContext } from "react";
 import { AllCourseDetail } from "../AllCourseContext/Context";
@@ -21,7 +21,7 @@ const QuizList = () => {
   const getAllQuizess = async () => {
     setLoading(true)
     try {
-      let res = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/get_all_quizz`) 
+      let res = await api.get(`/api/v1/get_all_quizz`)  
       console.log(res);
       setQuizz(res.data.quizz)
     } catch (error) {
@@ -100,7 +100,7 @@ const QuizList = () => {
 
         };
         console.log(payload);
-        let subRes = await axios.post("https://lms-web-application-backend-ymjf.onrender.com/api/v1/send_quiz_result", payload);
+        let subRes = await api.post(`/api/v1/send_quiz_result`, payload);
         console.log(subRes);
       } catch (error) {
         console.error("Error sending quiz result:", error);

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import api from '../../../Utils/api';
 import { 
   FaArrowLeft, 
   FaUsers, 
@@ -32,11 +33,11 @@ const QuizSubmissions = () => {
   const fetchSubmissions = async () => {
     try {
       // Fetch quiz info
-      const quizRes = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/get_quiz/${quizId}`);
+      const quizRes = await api.get(`/get_quiz/${quizId}`);
       setQuizTitle(quizRes.data.quizName || "Quiz");
 
       // Fetch submissions
-      const subRes = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/get_all_user_quiz_answer/${quizId}`);
+      const subRes = await api.get(`/get_all_user_quiz_answer/${quizId}`);
       setSubmissions(subRes.data || []);
     } catch (err) {
       console.error("Error fetching quiz submissions:", err);

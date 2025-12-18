@@ -18,7 +18,7 @@ const Contact = () => {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/user_enquiries`, 
+        `/api/v1/user_enquiries`,  
         inputs
       );
       console.log(res.data);

@@ -18,7 +18,7 @@ const UserAssignment = ({ setClickAssignment, assignment, userCourses }) => {
   const getAllAssignments = async () => {
     try {
       setLoading(true)
-      let res = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/get_all_assignments`) 
+      let res = await api.get(`/api/v1/get_all_assignments`)  
       console.log(res)
     } catch (error) {
 

@@ -1,4 +1,5 @@
 import axios from "axios"
+import api from '../../Utils/api';
 import React, { useState } from 'react';
 import { SiQuicklook } from "react-icons/si";
 import { MdMail, MdArrowBack, MdLock, MdCheckCircle } from 'react-icons/md';
@@ -17,7 +18,7 @@ const FoegetPasswordOne = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            let res = await axios.post(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/forgot_password`, { 
+            let res = await api.post(`/api/v1/forgot_password`, { 
                 email
             });
             console.log('Password reset requested for:', email);

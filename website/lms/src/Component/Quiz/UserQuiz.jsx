@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import api from '../../Utils/api';
+import { useNavigate, useParams } from "react-router-dom"; 
 
 const UserQuiz = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const UserQuiz = () => {
   const [answers, setAnswers] = useState([]);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/view_quiz/${quizId}`)
+    api.get(`/view_quiz/${quizId}`)
       .then(res => {
         const quizData = res.data.data;
         setQuiz(quizData);
@@ -30,7 +31,7 @@ const UserQuiz = () => {
   };
 
   const handleSubmit = () => {
-    axios.post(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/submit_quiz`, { quizId, answers })
+    api.post(`/api/v1/submit_quiz`, { quizId, answers })
       .then(res => alert(`Quiz submitted! Score: ${res.data.data.score}`))
     navigate("/quizzes")
       .catch(err => {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import api from '../../Utils/api';
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
@@ -23,8 +24,8 @@ const InstructorQuizManager = () => {
 
   const fetchQuizzes = async () => {
     try {
-      const res = await axios.get(
-        `${import.meta.env.VITE_API_URL || window?.location?.origin}/all`,
+      const res = await api.get(
+        `/all`,
         { withCredentials: true }
       );
       setQuizzes(res.data.data || []);
@@ -40,7 +41,7 @@ const InstructorQuizManager = () => {
     if (!window.confirm(`Delete "${quizName}"?`)) return;
 
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL || window?.location?.origin}/delete_quiz/${id}`); 
+      await api.delete(`/delete_quiz/${id}`); 
       setQuizzes((prev) => prev.filter((q) => q._id !== id));
       toast.success("Quiz deleted successfully");
     } catch (err) {

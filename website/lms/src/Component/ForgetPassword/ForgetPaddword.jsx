@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import axios from "axios"
-import { useState } from 'react'
+import api from '../../Utils/api';
+import { useState } from 'react' 
 import { useNavigate, useParams } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import { MdCreateNewFolder, MdOutlineSecurity, MdQuickreply } from 'react-icons/md';
@@ -45,7 +46,7 @@ const ForgetPaddword = () => {
     }
 
     try {
-      const res = await axios.post(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/reset_password/${token}`, { password });
+      const res = await api.post(`/api/v1/reset_password/${token}`, { password });
 
       if (res.data.success) {
         toast.success(res.data.message);

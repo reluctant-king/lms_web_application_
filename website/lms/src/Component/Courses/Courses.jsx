@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
+import api from '../../Utils/api';
 import { Search, Filter, X, ChevronLeft, ChevronRight, SlidersHorizontal } from "lucide-react";
 import CourseCard from "./CourseCard";
 
@@ -48,8 +49,8 @@ const CoursesPage = () => {
       params.append('sortBy', sortBy);
       params.append('sortOrder', sortOrder);
 
-      const res = await axios.get(
-        `${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/get_all_courses?${params.toString()}`, 
+      const res = await api.get(
+        `/api/v1/get_all_courses?${params.toString()}`, 
         { withCredentials: true }
       );
 

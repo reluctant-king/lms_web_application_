@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import api from '../../../Utils/api';
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -38,7 +39,7 @@ const CreateInstructorCourse = () => {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/view_All_categories`);
+      const res = await api.get(`/api/v1/view_All_categories`);
       if (res.data.allCoursecategory) {
         setCategories(res.data.allCoursecategory);
       }
@@ -186,8 +187,8 @@ const CreateInstructorCourse = () => {
         discount: formData.discount ? parseFloat(formData.discount) : 0
       };
 
-      const res = await axios.post(
-        `${import.meta.env.VITE_API_URL || window?.location?.origin}/api/v1/create-course`,
+      const res = await api.post(
+        `/api/v1/create-course`,
         payload,
         { withCredentials: true }
       );
