@@ -35,6 +35,7 @@ const Login = () => {
 
             if (res.data.success && res.data.isAuthentication) {
                 console.log(res.data.message)
+                console.log("Backend API URL:", import.meta.env.VITE_API_URL);
                 toast.success(res.data.message);
                 setMessage(res.data.message);
                 await new Promise((r) => setTimeout(r, 2000));
@@ -55,6 +56,8 @@ const Login = () => {
             }
         } catch (error) {
             console.error(error);
+            console.log("Backend API URL:", import.meta.env.VITE_API_URL);
+
             
             toast.error(error.response?.data?.message || "Something went wrong");
             // console.log(error.response?.data?.message)
