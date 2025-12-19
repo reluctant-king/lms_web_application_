@@ -9,11 +9,11 @@
   ],
   "routes": [
     {
-      "src": "/favicon.ico",
+      "src": "^/favicon.ico$",
       "dest": "/pngegg.png"
     },
     {
-      "src": "^/(.*)",
+      "src": "^/(?!assets/|_app/|_static/|favicon.ico|robots.txt|sitemap.xml).*$",
       "dest": "/index.html"
     }
   ]
