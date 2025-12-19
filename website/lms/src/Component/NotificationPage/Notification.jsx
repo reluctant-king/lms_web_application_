@@ -6,7 +6,7 @@ import { FaExclamationCircle } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify'; 
 import { useContext } from 'react';
 import { AllCourseDetail } from '../AllCourseContext/Context';
-import api from '../../utils/api';
+import api from "../../../Utils/api";
 
 const Notification = () => {
   const [notifications, setNotifications] = useState([]);

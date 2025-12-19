@@ -1,5 +1,5 @@
 import axios from "axios"
-import api from '../../utils/api';
+import api from "../../../Utils/api";
 import React, { useState } from 'react';
 import { SiQuicklook } from "react-icons/si";
 import { MdMail, MdArrowBack, MdLock, MdCheckCircle } from 'react-icons/md';

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MdEmail } from "react-icons/md";
-import api from '../../utils/api';
+import api from "../../../Utils/api";
 
 const Contact = () => {
   const [inputs, setInputs] = useState({ name: "", email: "", message: "" });

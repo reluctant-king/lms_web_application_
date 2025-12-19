@@ -4,12 +4,7 @@ import {
   Mail, CalendarDays, TrendingUp, MoreHorizontal, 
   ArrowUpRight, BookOpen, Clock, ChevronDown, X
 } from 'lucide-react';
-import api from '../../../utils/api';
-
-const CourseStudentsPage = () => {
-  const [students, setStudents] = useState([]);
-  const [filteredStudents, setFilteredStudents] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+import api from "../../../utils/api";
   const [statusFilter, setStatusFilter] = useState('all');
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -432,6 +427,6 @@ const CourseStudentsPage = () => {
       </div>
     </div>
   );
-};
+
 
 export default CourseStudentsPage;

@@ -1,4 +1,4 @@
-import api from '../../utils/api';
+import api from "../../../Utils/api";
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { FcGoogle } from "react-icons/fc"

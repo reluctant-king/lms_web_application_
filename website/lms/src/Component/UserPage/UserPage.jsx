@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { FaPen, FaUserCircle, FaCamera, FaEnvelope, FaCalendarAlt, FaAward} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { AllCourseDetail } from '../AllCourseContext/Context'
-import api from '../../utils/api';
+import api from "../../../Utils/api";
 import AddStudent from '../AddStudentDetails/AddStudent' 
 import { 
   FaBook, FaCertificate, FaTrophy, FaClock, FaFire, 

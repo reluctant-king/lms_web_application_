@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import api from '../../utils/api';
+import api from "../../../Utils/api";
 import { AllCourseDetail } from "../AllCourseContext/Context";
 import { useContext } from "react";
 import { toast, ToastContainer } from "react-toastify";

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../../utils/api';
+import api from "../../../Utils/api";
 import axios from 'axios';
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 
