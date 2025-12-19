@@ -9,8 +9,12 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/app.jsx"
+      "src": "/favicon.ico",
+      "dest": "/pngegg.png"
+    },
+    {
+      "src": "^/(.*)",
+      "dest": "/index.html"
     }
   ]
 }

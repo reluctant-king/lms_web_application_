@@ -47,8 +47,6 @@ const Login = () => {
                 } else {
                     navigate("/");
                 }
-
-                window.location.reload();
                 
 
             } else {
