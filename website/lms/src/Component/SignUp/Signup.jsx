@@ -1,4 +1,4 @@
-import axios from 'axios'
+import api from '@/utils/api';
 import React, { useState } from 'react';
 import { MdMail, MdLock, MdVisibility, MdVisibilityOff, MdPerson, MdPhone } from 'react-icons/md';
 import { toast ,ToastContainer } from 'react-toastify';

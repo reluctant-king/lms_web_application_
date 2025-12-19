@@ -4,7 +4,7 @@ import {
   Mail, CalendarDays, TrendingUp, MoreHorizontal, 
   ArrowUpRight, BookOpen, Clock, ChevronDown, X
 } from 'lucide-react';
-import axios from 'axios';
+import api from '@/utils/api';
 
 const CourseStudentsPage = () => {
   const [students, setStudents] = useState([]);
@@ -22,7 +22,7 @@ const CourseStudentsPage = () => {
     const fetchStudents = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(
+        const res = await api.get(
           `/api/v1/course_students/${courseId}`
         );
 

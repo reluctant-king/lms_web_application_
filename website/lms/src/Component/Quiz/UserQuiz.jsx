@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import api from '../../Utils/api';
+import api from '@/utils/api';
 import { useNavigate, useParams } from "react-router-dom"; 
 
 const UserQuiz = () => {

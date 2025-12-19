@@ -4,7 +4,7 @@ import { FiLogOut } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { AllCourseDetail } from '../AllCourseContext/Context';
-import api from '../../Utils/api';
+import api from '@/utils/api';
 
 const Logout = ({ setLogout }) => {
   const navigate = useNavigate();

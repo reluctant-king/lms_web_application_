@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '@/utils/api';
 import React, { useState, useContext } from 'react';
 import { IoMdEye, IoMdEyeOff, IoMdMail } from "react-icons/io";
 import { Link, useNavigate } from 'react-router-dom';

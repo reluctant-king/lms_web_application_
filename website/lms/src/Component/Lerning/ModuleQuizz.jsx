@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { toast, ToastContainer } from 'react-toastify';
 import { AllCourseDetail } from '../AllCourseContext/Context';
-import axios from 'axios';
+import api from "@/utils/api";
 
 const ModuleQuizz = ({ currentQuizz, onBack, moduleName, moduleId, currentQuizId, onQuizSubmitSuccess , courseName}) => {
   console.log(courseName)

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import api from '../../Utils/api';
+import api from '@/utils/api';
 import React, { useContext, useEffect, useState } from 'react' 
 import { FaTimes, FaUpload, FaCalendarAlt, FaClock, FaBook, FaUsers, FaStar, FaCheckCircle } from 'react-icons/fa';
 import Swal from "sweetalert2";

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import axios from "axios";
-import api from '../../../Utils/api';
+import api from '@/utils/api';
 import { 
   FaArrowLeft, 
   FaUsers, 

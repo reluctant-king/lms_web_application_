@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import api from '../../Utils/api';
-import { toast, ToastContainer } from 'react-toastify'
+import api from '@/utils/api';
+import { toast, ToastContainer } from 'react-toastify' 
 import { useContext } from "react";
 import { AllCourseDetail } from "../AllCourseContext/Context";
 

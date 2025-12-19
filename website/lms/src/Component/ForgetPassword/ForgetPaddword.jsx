@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import axios from "axios"
-import api from '../../Utils/api';
+import api from '@/utils/api';
 import { useState } from 'react' 
 import { useNavigate, useParams } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';

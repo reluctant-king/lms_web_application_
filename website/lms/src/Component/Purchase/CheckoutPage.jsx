@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import api from '../../Utils/api';
+import api from '@/utils/api';
 import { useContext } from "react"; 
 import { AllCourseDetail } from "../AllCourseContext/Context";
 import { toast, ToastContainer } from 'react-toastify'
