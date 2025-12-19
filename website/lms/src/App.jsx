@@ -18,7 +18,7 @@ import QuizList from './Component/Quiz/QuizList'
 // import UserQuiz from './Component/Quiz/UserQuiz'
 import FoegetPasswordOne from './Component/ForgetPassword/FoegetPasswordOne'
 import ForgetPaddword from './Component/ForgetPassword/ForgetPaddword'
-import ProtectedRoutes from './Utils/ProtectedRoutes'
+import ProtectedRoutes from "@/utils/ProtectedRoutes";
 
 
 import CheckoutPage from './Component/Purchase/CheckoutPage'

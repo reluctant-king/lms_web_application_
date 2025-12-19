@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
-import api from "../../../Utils/api";
+import api from '@/utils/api';
 import { Search, Filter, X, ChevronLeft, ChevronRight, SlidersHorizontal } from "lucide-react";
 import CourseCard from "./CourseCard";
 

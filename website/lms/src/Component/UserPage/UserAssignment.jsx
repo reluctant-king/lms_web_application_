@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { FaBookmark, FaTimes } from 'react-icons/fa'
 import { AllCourseDetail } from '../AllCourseContext/Context'
-import api from "../../../Utils/api";
+import api from '@/utils/api';
 
 const UserAssignment = ({ setClickAssignment, assignment, userCourses }) => {
   console.log(userCourses)

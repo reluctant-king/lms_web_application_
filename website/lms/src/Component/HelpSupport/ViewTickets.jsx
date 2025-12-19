@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
-import api from "../../../Utils/api";
+import api from '@/utils/api';
 import axios from "axios";
 import { ArrowLeft, Send, Paperclip, MoreVertical, CheckCheck } from "lucide-react";
 

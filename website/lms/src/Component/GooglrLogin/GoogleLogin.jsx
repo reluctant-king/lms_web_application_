@@ -1,6 +1,6 @@
-import api from "../../../Utils/api";
+import api from '@/utils/api';
 import axios from 'axios'
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react' 
 import { FcGoogle } from "react-icons/fc"
 import { useLocation, useNavigate } from 'react-router-dom'
 

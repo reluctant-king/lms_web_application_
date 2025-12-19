@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext } from 'react';
 import { FaArrowRight, FaCheckCircle, FaTimes } from 'react-icons/fa'
 import { AllCourseDetail } from '../AllCourseContext/Context';
-import api from "../../../Utils/api";
+import api from '@/utils/api';
 import { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 
