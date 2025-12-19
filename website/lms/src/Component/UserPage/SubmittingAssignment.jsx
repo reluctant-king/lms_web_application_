@@ -2,8 +2,8 @@ import React from 'react'
 import { useContext } from 'react';
 import { FaArrowRight, FaCheckCircle, FaTimes } from 'react-icons/fa'
 import { AllCourseDetail } from '../AllCourseContext/Context';
+import api from '../../utils/api';
 import { useState } from 'react';
-import api from '@/utils/api';
 import { toast, ToastContainer } from 'react-toastify';
 
 const SubmittingAssignment = ({ setclickSubmittingAssignment, assignment, userCourses }) => {

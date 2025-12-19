@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import api from '@/utils/api';
+import api from '../../utils/api';
 import axios from "axios";
 import { toast } from "react-toastify";
 import { X, Upload, Ticket, MessageSquare, Clock, AlertCircle } from "lucide-react";

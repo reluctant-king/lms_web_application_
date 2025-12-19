@@ -4,7 +4,7 @@ import {
   Mail, CalendarDays, TrendingUp, MoreHorizontal, 
   ArrowUpRight, BookOpen, Clock, ChevronDown, X
 } from 'lucide-react';
-import api from '@/utils/api';
+import api from '../../../utils/api';
 
 const CourseStudentsPage = () => {
   const [students, setStudents] = useState([]);

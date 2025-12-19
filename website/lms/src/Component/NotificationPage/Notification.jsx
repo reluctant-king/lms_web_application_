@@ -3,10 +3,10 @@ import { BsBellFill } from 'react-icons/bs';
 import { MdClose, MdDownloadDone, MdAssignment, MdAnnouncement, MdGrade, MdInfo } from 'react-icons/md';
 import { FaTrash } from 'react-icons/fa';
 import { FaExclamationCircle } from 'react-icons/fa';
-import api from '@/utils/api';
 import { toast, ToastContainer } from 'react-toastify'; 
 import { useContext } from 'react';
 import { AllCourseDetail } from '../AllCourseContext/Context';
+import api from '../../utils/api';
 
 const Notification = () => {
   const [notifications, setNotifications] = useState([]);

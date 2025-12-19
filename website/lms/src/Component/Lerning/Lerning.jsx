@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import axios from "axios";
-import api from '@/utils/api';
 import {
   FiArrowLeft,
   FiChevronLeft,

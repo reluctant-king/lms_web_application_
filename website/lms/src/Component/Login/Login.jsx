@@ -1,5 +1,5 @@
-import api from '@/utils/api';
 import React, { useState, useContext } from 'react';
+import api from '../../utils/api';
 import { IoMdEye, IoMdEyeOff, IoMdMail } from "react-icons/io";
 import { Link, useNavigate } from 'react-router-dom';
 import { MdLock, MdVerified } from "react-icons/md";

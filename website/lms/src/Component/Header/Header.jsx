@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import Logout from '../LogoutModal/Logout';
 import { AllCourseDetail } from '../AllCourseContext/Context';
-import api from '@/utils/api';
+import api from '../../utils/api';
 
 const Header = () => {
   const { user } = useContext(AllCourseDetail);

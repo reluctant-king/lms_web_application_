@@ -1,5 +1,4 @@
 import axios from 'axios'
-import api from '@/utils/api';
 import React, { useContext, useEffect, useState } from 'react' 
 import { FaCheckCircle, FaClock, FaDownload, FaTimes } from 'react-icons/fa'
 import { AllCourseDetail } from '../AllCourseContext/Context';

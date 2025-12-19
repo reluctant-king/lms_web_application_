@@ -20,7 +20,7 @@ import {
 } from 'react-icons/fa';
 import { MdAssignment } from "react-icons/md";
 import { Link } from 'react-router-dom';
-import api from '@/utils/api';
+import api from '../../utils/api';
 import AddInstructors from '../Instructors/AddInstructors' 
 import UploadAssignment from './UploadAssignment';
 import { AllCourseDetail } from '../AllCourseContext/Context';

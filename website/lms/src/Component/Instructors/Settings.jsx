@@ -16,7 +16,6 @@ import {
   Briefcase
 } from 'lucide-react';
 import { AllCourseDetail } from '../AllCourseContext/Context';
-import api from '@/utils/api';
 
 const SettingsPage = () => {
   const { user } = useContext(AllCourseDetail);

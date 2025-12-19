@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import api from '@/utils/api';
+import api from '../../utils/api';
 import { toast, ToastContainer } from 'react-toastify' 
 import { useContext } from "react";
 import { AllCourseDetail } from "../AllCourseContext/Context";
